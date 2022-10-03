@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="col-12 mt-2 mb-2">
+        Filtrer les utilisateurs qui ont l'age entre 5 et 10 ans
+        <input type="checkbox" value="" 
+            aria-label="Checkbox for following text input"
+            #filterUser
+            [checked]="isChecked" 
+            (change)="handleFilter(filterUser.checked)">
+    </div>
+    <div class="col-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let user of users">
+                {{ user.firstName }} {{ user.lastName }} agé(e) de : {{ user.age }} ans
+            </li>
+        </ul>
+    </div>
+</div>
